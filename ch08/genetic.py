@@ -86,7 +86,7 @@ def _get_improvement(new_child, generate_parent, maxAge):
             index = bisect_left(historicalFitnesses, child.Fitness, 0,
                                 len(historicalFitnesses))
             proportionSimilar = index / len(historicalFitnesses)
-            if random.random() < exp(-proportionSimilar):
+            if random.random() < exp(-proportionSimilar): # I don't know why minus
                 parent = child
                 continue
             bestParent.Age = 0
